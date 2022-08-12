@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #8cccff;
+}
+
+.box {
+  width: 300px;
+  position: relative;
+}
+.input-box {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+.input-box input {
+  position: relative;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px 5px;
+}
+.input-box #toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#toggle-btn::before {
+  content: "\f06e";
+
+  font-family: "fontAwesome";
+}
+#toggle-btn.hide::before {
+  content: "\f070";
+
+  font-family: "fontAwesome";
+}
+.validation {
+  background-color: #376488;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+}
+.validation ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.validation li {
+  position: relative;
+  list-style: none;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: 0.5s;
+}
+.validation li.valid {
+  color: rgba(255, 255, 255, 0, 5);
+}
+.validation li::before {
+  content: "\f192";
+  font-family: "fontAwesome";
+  width: 20px;
+  height: 10px;
+  display: inline-flex;
+}
+
+.validation li.valid::before {
+  content: "\f00c";
+  font-family: "fontAwesome";
+  color: #0f0;
+}
