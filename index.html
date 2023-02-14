@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JsForm</title>
+    <title>Tahdiery</title>
     <link rel="stylesheet" href="style.css" />
     <!-- font Awesome -->
     <link
@@ -13,22 +13,66 @@
     />
   </head>
   <body>
-    <div class="box">
-      <div class="input-box">
-        <input type="password" placeholder="Password" id="pass" onkeyup=checkPassword(this.value) />
-        <span id="toggle-btn"></span>
+    <main class="main">
+      <div class="box" id="sign-in">
+        <form action="#">
+          <div class="input-box">
+            <input type="email" placeholder="@Email" id="email" />
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Password"
+              id="pass"
+              onkeyup="checkPassword(this.value)"
+            />
+            <span class="toggle-btn"></span>
+          </div>
+        </form>
+        <div class="validation">
+          <ul>
+            <li id="lower">At least have one lowercase carachter</li>
+            <li id="upper">At least have one uppercase carachter</li>
+            <li id="number">At least have one number</li>
+            <li id="spechial">At least have one spechail carachter</li>
+            <li id="eigthcharc">At least have eight carachters</li>
+          </ul>
+        </div>
       </div>
-      <div class="validation">
-        <ul>
-          <li id="lower">At least have one lowercase carachter</li>
-          <li id="upper">At least have one uppercase carachter</li>
-          <li id="number">At least have one number</li>
-          <li id="spechial">At least have one spechail carachter</li>
-          <li id="eigthcharc">At least have eight carachters</li>
-        </ul>
+      <div class="box" id="sign-up">
+        <form action="#">
+          <div class="input-box">
+            <input type="text" placeholder="First name" id="first-name" />
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Last name" id="lasst-name" />
+          </div>
+          <div class="input-box">
+            <input type="email" placeholder="email" id="signup-email" />
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Password" id="sign-up-pw" />
+            <span class="toggle-btn"></span>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Conform Password"
+              id="sign-up-conform-pw"
+            />
+            <span class="toggle-btn"></span>
+          </div>
+        </form>
       </div>
-      <script src="script.js"></script>
-    </body>
-    </div>
-  
+      <div class="more-actions">
+        <a href="#">Forgot password ?</a>
+        <a href="#" class="sign-up-link">Sign Up </a>
+        <button id="submit-btn" class="btn btn-primary" type="submit">
+          Login
+        </button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

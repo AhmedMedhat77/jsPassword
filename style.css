@@ -5,6 +5,27 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+:root {
+  --main-color: #8cccff;
+  --color-secondary: #376488;
+  --transition: 0.3s all linear;
+  --color-white: #fff;
+  --box-shadow-color: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.btn {
+  border: 1px solid transparent;
+  outline: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
 
 body {
   min-height: 100vh;
@@ -12,20 +33,28 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #8cccff;
+  background-color: var(--main-color);
 }
-
-.box {
-  width: 300px;
+.main {
+  overflow: hidden;
+  max-height: 600px;
   position: relative;
+}
+.box {
+  padding: 1rem 1rem;
+  width: 330px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .input-box {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 5px;
   border-radius: 8px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow-color);
+  margin-bottom: 2rem;
 }
 .input-box input {
   position: relative;
@@ -34,7 +63,7 @@ body {
   border: none;
   padding: 10px 5px;
 }
-.input-box #toggle-btn {
+.input-box .toggle-btn {
   position: absolute;
   right: 10px;
   top: 8px;
@@ -47,22 +76,22 @@ body {
   justify-content: center;
   align-items: center;
 }
-#toggle-btn::before {
+.toggle-btn::before {
   content: "\f06e";
 
   font-family: "fontAwesome";
 }
-#toggle-btn.hide::before {
+.toggle-btn.hide::before {
   content: "\f070";
 
   font-family: "fontAwesome";
 }
 .validation {
-  background-color: #376488;
+  background-color: var(--color-secondary);
   padding: 10px;
   margin-top: 30px;
   border-radius: 8px;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow-color);
 }
 .validation ul {
   display: flex;
@@ -73,7 +102,7 @@ body {
 .validation li {
   position: relative;
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
   font-size: 0.85rem;
   transition: 0.5s;
 }
@@ -92,4 +121,71 @@ body {
   content: "\f00c";
   font-family: "fontAwesome";
   color: #0f0;
+}
+
+.more-actions {
+  margin-top: 5rem;
+  text-align: start;
+}
+.more-actions a {
+  color: blue;
+  cursor: pointer;
+  padding-left: 1rem;
+  transition: var(--transition);
+}
+.more-actions button {
+  display: block;
+  width: 100%;
+}
+.more-actions a:hover {
+  color: #ff1744;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  box-shadow: var(--box-shadow-color);
+  padding: 1rem 1.3rem;
+  border-radius: 1.2rem;
+}
+
+#submit-btn {
+  margin-top: 1rem;
+}
+
+.signup-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .signup-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+#sign-up {
+  margin-top: 2.6rem;
+  position: absolute;
+  background-color: var(--main-color);
+  top: -200px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+#sign-up.active {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+}
+#sign-in.disabled {
+  visibility: hidden;
+  transition: var(--transition);
+}
+.signup-show {
+  padding: 1.2rem 1.5rem;
+  background-color: #ff1744;
+  color: var(--color-white);
 }
